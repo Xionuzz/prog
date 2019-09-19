@@ -1,0 +1,54 @@
+Apuntes Programación - 4 - 18/09/19
+
+Lenguajes de programación tipados, el tipado exige que en el lenguaje se especifique el tipo de dato de la variable (int, char, double...). Cada tipo tiene una cantidad de memoria asociada.
+
+ESTRUCTURA EN JAVA
+
+-CLASE
+	-MÉTODO
+		-SENTENCIAS
+
+NOTAS SOBRE JAVA
+
+Java es "case sensitive"
+
+El nombre de las clases en mayúscula
+
+En Java, las sentencias siempre terminan con un punto y coma ";"
+
+El tipo de dato "String" es una clase, no es un tipo de dato primitivo
+
+---
+
+Concadenación
+
+---
+
+Los nombres de las variables deben de ser sugerentes e indicar que tipo de información / dato contienen
+
+EX: una variable para la edad se puede llamar int edad
+
+---
+
+Cammel Case
+
+---
+Los números generados por el PC se consideran pseudoaleatorios, no son completamente aleatorios.
+---
+Los bucles en Java se construyen con while y con for, ambos son distintos.
+
+la estructura de While requiere de una condición y luego abrir llaves. Mientras la condición especificada se cumpla, seguira iterando y cumpliendo las sentencias de ese bloque.
+
+OPERADORES DE COMPARACIÓN
+
+"<" menor que
+
+">" mayor que
+
+"==" igual que
+
+"!=" no igual que
+
+TRAZA DE UN PROGRAMA
+
+Anotar la secuencia de estados por los cuales pasa un programa.
