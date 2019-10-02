@@ -1,0 +1,56 @@
+
+a) mi carta
+
+No es válido hay espacio blanco entre los dos términos
+
+b) unacarta
+
+Válido pero no sigue la convención. En su lugar unaCarta
+
+c) min2escritos
+
+Válido pero no respeta la convención. 
+
+d) 4cientos
+
+Válido pero no respeta la convención. Uso de números.
+
+e) es_un_mensaje
+
+Válido pero no sigue la convención. En su lugar esUnMensaje
+
+f) no_vale nada
+
+No es válido, existe separación entre el vale y el nada. En su lugar noValeNada
+
+g) ______ejemplo________
+
+Válido pero no respeta la convención, su sintaxis dificulta la lectura. ejemplo
+
+h) mi-programa
+
+No es válido, no se puede utilizar el caractér "-". En su lugar miPrograma
+
+i) ¿Cuántos?
+
+No es válido, no se puede utilizar carácteres "¿?". Además la variable no debería empezar por mayúscula ni ocntener acentos.
+
+j) el%Descontado
+
+No es válido, caractér reservado "%".
+
+k) a150PORHORA
+
+Válido pero no respeta la convención. 
+
+l) TengoMUCHO$$$$$
+
+Válido pero la sintaxis no respeta la convención y se podria mejorar. tengoMuchoDinero
+
+m) LOS400GOLPES
+
+Válido al declarar la variable como final, se podría mejorar la sintaxis.
+
+n) quieroUNAsolución
+
+Aunque funcionaria, no sigue la convención y no se recomienda el uso de acentos. quieroUnaSolucion

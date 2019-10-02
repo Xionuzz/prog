@@ -1,0 +1,12 @@
+public class PrecioZapatos {
+
+    public static void main(String Args []){
+
+	float precioDescuento = (15/85)*100;
+	int precioZapatos = 85;
+	int descuento = 15;
+
+	System.out.println("El precio de los zapatos, con un descuento del 15% es: " + precioDescuento);
+    }
+
+}

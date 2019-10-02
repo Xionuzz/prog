@@ -1,0 +1,64 @@
+7. ¿Cuáles de las siguientes asignaciones son incorrectas dadas las siguientes declaraciones?: 
+int A, B, C, D
+salario cuenta, M, SUMA, NOTA1, NOTA2, P; 
+       String K, nombre;
+
+a) A + B = C + D;
+
+Asiganción incorrecta, la operación no está bien planteada.
+
+b) nombre = PEDRO;
+
+La asignación es incorrecta, PEDRO debe de estar con comillas dobles: "PEDRO"
+
+c) salario= salario+1;
+
+Asignación correcta, el valor de salario después de la asignación es de 1.
+
+d) cuenta = 45000;
+
+Asignación correcta.
+
+e) k= k*4;
+
+Asignación inválida, la variable k no ha sido inicializada previo a su uso.
+
+f) B = 18 -B;
+
+Asignación correcta, dado que a b no se le ha dado ningún valor en su asignación, su valor es 0, por lo que esta asignación devuelve 18.
+
+g) C= X-8;
+
+Asignación incorrecta, la variable X no ha sido inicializada.
+
+h) SUMA = NOTA1 +nota2;
+
+Esta asignación es incorrecta, nota2 != NOTA2. Java es case sensitive.
+
+i) P+5 = 14;
+
+Asignación incorrecta, la operación de asignación no está bien planteada.
+
+j) K= “Carlos”;
+
+Esta asignación es válida.
+
+k) nombre= 'ana';
+
+Esta asignación no es válida, utiliza comillas simples en vez de comillas dobles.
+	 
+l) nombre= K;
+
+Asignación correcta.
+
+m) nombre = “Juan” + K;
+
+Asignación correcta.
+
+n) B= K;
+
+Esta asignación no es válida, no se puede asignar un tipo int a un tipo String.
+
+o) K = B;
+
+Íbidem del caso anterior, solo que esta vez los valores se asocian en diferente orden.
