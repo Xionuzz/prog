@@ -46,39 +46,7 @@ public class MonedasDinero {
 	    scan.reset();
 	
 	    // Se itera, restando la cantidad de cada moneda a dinero y añadiendo una unidad de esa moneda.
-    
-        for (;dinero >= MONEDADOS; ++cantidadDos){
-            dinero = dinero - 2.0;
-            
-        }
-
-        for (;dinero >= MONEDAUNO; ++cantidadUno){
-            dinero = dinero - 1.0;
-        }
-
-        for (;dinero >= MONEDACINCUENTA; ++cantidadCincuenta){
-            dinero = dinero - 0.50;
-        }
-
-        for (;dinero >= MONEDAVEINTE; ++cantidadVeinte){
-            dinero = dinero - 0.20;
-        }
-
-        for (;dinero >= MONEDADIEZ; ++cantidadDiez){
-            dinero = dinero - 0.10;
-        }
-
-        for (;dinero >= MONEDACINCO; ++cantidadCinco){
-            dinero = dinero - 0.05;
-        }
-
-        for (;dinero >= MONEDADOSCENT; ++cantidadDosCent){
-            dinero = dinero - 0.02;
-        }
-
-        for (;dinero >= MONEDAUNOCENT; ++cantidadUnoCent){
-            dinero = dinero - 0.01;
-        }
+	    
 
         /*/ Muestra el resultado por pantalla
         
