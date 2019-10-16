@@ -16,69 +16,33 @@ public class MonedasDinero {
          valor de las monedas y un contador de cantidad de cada una.*/
 
 	    double dinero;
-    
-        final double MONEDADOS = 2.0;
-        double cantidadDos = 0;
-
-        final double MONEDAUNO = 1.0;
-        double cantidadUno = 0;
-
-        final double MONEDACINCUENTA = 0.50;
-        double cantidadCincuenta = 0;
-
-        final double MONEDAVEINTE = 0.20;
-        double cantidadVeinte = 0;
-
-        final double MONEDADIEZ = 0.10;
-        double cantidadDiez = 0;
-
-        final double MONEDACINCO = 0.05;
-        double cantidadCinco = 0;
-
-        final double MONEDADOSCENT = 0.02;
-        double cantidadDosCent = 0;
-
-        final double MONEDAUNOCENT = 0.01;
-        double cantidadUnoCent = 0;
+	    double monedaDos;
 
 	    System.out.println("Introduce una cantidad de dinero:");
-	    dinero = scan.nextDouble(); //
+	    dinero = scan.nextFloat(); //
 	    scan.reset();
+
+	    if (dinero >= 2.0) {
+		monedaDos = dinero / 2.0;
+		System.out.println(monedaDos);
+		
+
+	    }
+
+	    else if (dinero >= 1) {
+	    }
+
+	    else if (dinero >= 0.50) {
+	    }
+
+	    else if (dinero >= 0.20) {
+	    }
+
+	    else if (dinero >= 0.50) {
+	    }
 	
 	    // Se itera, restando la cantidad de cada moneda a dinero y añadiendo una unidad de esa moneda.
-    
-        for (;dinero >= MONEDADOS; ++cantidadDos){
-            dinero = dinero - 2.0;
-            
-        }
-
-        for (;dinero >= MONEDAUNO; ++cantidadUno){
-            dinero = dinero - 1.0;
-        }
-
-        for (;dinero >= MONEDACINCUENTA; ++cantidadCincuenta){
-            dinero = dinero - 0.50;
-        }
-
-        for (;dinero >= MONEDAVEINTE; ++cantidadVeinte){
-            dinero = dinero - 0.20;
-        }
-
-        for (;dinero >= MONEDADIEZ; ++cantidadDiez){
-            dinero = dinero - 0.10;
-        }
-
-        for (;dinero >= MONEDACINCO; ++cantidadCinco){
-            dinero = dinero - 0.05;
-        }
-
-        for (;dinero >= MONEDADOSCENT; ++cantidadDosCent){
-            dinero = dinero - 0.02;
-        }
-
-        for (;dinero >= MONEDAUNOCENT; ++cantidadUnoCent){
-            dinero = dinero - 0.01;
-        }
+	    
 
         /*/ Muestra el resultado por pantalla
         
