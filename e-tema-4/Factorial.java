@@ -1,4 +1,4 @@
-/*Obtiene la potencia de un número real mediante multiplicaciones.
+/*Obtiene el factorial de un número.
  *Ejercicio 8-4-2
  *@author: Rafa Carrió
  *@version: 1
