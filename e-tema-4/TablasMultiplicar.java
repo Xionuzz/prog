@@ -10,13 +10,22 @@ public class TablasMultiplicar{
         int numero;
         int mult = 1;
         int resultado;
+        boolean validado;
 
-        // solicitamos al usuario un número del 1 al 10.
-        System.out.println("Introduzca un número del 1 al 10:");
+        // Solicitamos al usuario un número del 1 al 10.
+        
 
-        numero = scan.nextInt();
-	scan.reset();
+        
+        do {
+            System.out.println("Introduzca un número del 1 al 10:");
+            numero = scan.nextInt();
+            scan.reset();
+            validado = numero == 0 && numero > 10;
 
+            while 
+
+
+        }
         // Iteramos para multiplicar cada número de la tabla y mostramos por pantalla.
         for (int i = 1; i <= 10; i++){
             
