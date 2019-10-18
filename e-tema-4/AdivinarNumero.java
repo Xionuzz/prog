@@ -27,26 +27,28 @@ public class AdivinarNumero {
 
             while (numero != numeroAleatorio) {
                 System.out.println("Intenta adivinar un número del 1 al 100:");
-                numero = scan.nextInt();
+				numero = scan.nextInt();
+				
+				if (contadorIntentos > intentos) {
+		    		System.out.println("Has perdido");
+		    		return;
+				}
 		
                 if (numero < numeroAleatorio) {
                     System.out.println(numero + " demasiado bajo. Intentalo otra vez.");
-		    contadorIntentos++;
-		}
+		    		contadorIntentos++;
+				}
 
-		else if (numero > numeroAleatorio) {
+				if (numero > numeroAleatorio) {
                     System.out.println(numeroAleatorio + " demasiado alto. Intenta otra vez");
-		    contadorIntentos++;
-		}
+		    		contadorIntentos++;
+				}
 
-		if (contadorIntentos == intentos) {
-		    System.out.println("Has perdido");
-		    return;
-		}
+				
 		
-		else
+				if (numero == numeroAleatorio) {
                     System.out.println(numeroAleatorio + " HAS GANADO!");
-
+				}
             }
 
             System.out.println("Jugar otra partida? y/n");
