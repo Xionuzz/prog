@@ -2,7 +2,7 @@
  *Ejercicio 12-4-2
  *@author: Rafa Carrió
  *@version: 1
-*/
+ */
 
 import java.util.Scanner;                           
 
@@ -14,52 +14,45 @@ public class AdivinarNumero {
 	int numero = 0;
 	int intentos = 0;
 	int contadorIntentos = 0;
-	String jugarOtra = "";
+	boolean bucleAdivinar = true;
 
         Scanner scan = new Scanner(System.in);
 
 	System.out.println("////// ADIVINA EL NÚMERO //////");
 	System.out.print("Número de intentos: ");
-
 	intentos = scan.nextInt();
+	System.out.println("Intenta adivinar un número del 1 al 100:");
 
-        do {
-
-            while (numero != numeroAleatorio) {
-                System.out.println("Intenta adivinar un número del 1 al 100:");
-				numero = scan.nextInt();
-				
-				if (contadorIntentos > intentos) {
-		    		System.out.println("Has perdido");
-		    		return;
-				}
+	while(bucleAdivinar) {
+	    
+	    if (contadorIntentos == intentos) {
+		System.out.println("HAS PERDIDO!");
+		bucleAdivinar = false;
+		System.out.println("Gracias por jugar!");		
+		return;
+	    }
 		
-                if (numero < numeroAleatorio) {
-                    System.out.println(numero + " demasiado bajo. Intentalo otra vez.");
-		    		contadorIntentos++;
-				}
+	    numero = scan.nextInt();
 
-				if (numero > numeroAleatorio) {
-                    System.out.println(numeroAleatorio + " demasiado alto. Intenta otra vez");
-		    		contadorIntentos++;
-				}
+	    if (numero < numeroAleatorio) {
+		System.out.println("Demasiado bajo. Intentalo otra vez.");
+		contadorIntentos++;
+	    }
 
-				
-		
-				if (numero == numeroAleatorio) {
-                    System.out.println(numeroAleatorio + " HAS GANADO!");
-				}
-            }
-
-            System.out.println("Jugar otra partida? y/n");
-
-            jugarOtra = scan.next();
-
-
-        } while (jugarOtra.equalsIgnoreCase("y"));
+	    else if (numero > numeroAleatorio) {
+		System.out.println("Demasiado alto. Intenta otra vez");
+		contadorIntentos++;
+	    }
+	    
+	    else if (numero == numeroAleatorio) {
+		System.out.println("HAS GANADO!");
+		bucleAdivinar = false;
+	    }
+	    
+	} 
 
         System.out.println("Gracias por jugar!");
 
     }
 }
-
+ 
