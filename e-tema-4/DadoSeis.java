@@ -23,7 +23,7 @@ public class DadoSeis {
 	
 
 	for(int i = 0; i <= 1000000; i++){
-	    dado = rnd.nextInt(1 - 6 + 1) + 1;
+	    dado = rnd.nextInt(6 - 1 + 1) + 1;
 
 	    switch (dado){
 	    case 1:
@@ -52,6 +52,7 @@ public class DadoSeis {
 	}
 
 	// Muestra por pantalla los resultados
+	
 	System.out.println("/// RESULTADOS ///");
 	System.out.println("Total unos: " + contadorUno);
 	System.out.println("Total doses: " + contadorUno);
