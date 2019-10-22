@@ -1,5 +1,5 @@
-/*
- *Ejercicio -4-2
+/*Calcula el porcentaje de cara o cruz que sale.
+ *Ejercicio 13-4-2
  *@author: Rafa Carrió
  *@version: 1
 */
@@ -16,7 +16,6 @@ public class PorcentajeCaraCruz {
 	
 	Random rnd = new Random();
 	
-
 	for(int i = 0; i <= 1000000; i++){
 	    moneda = rnd.nextInt(2 - 1 + 1) + 1;
 
@@ -27,10 +26,10 @@ public class PorcentajeCaraCruz {
 	    else
 		cruz++;
 	}
-
-	System.out.println(cara);
-	System.out.println(cruz);
-
-	System.out.println(cara / (cara + cruz) * cara);
+	System.out.println("/// RESULTADOS ///");
+	System.out.println("Total monedas lanzadas: " + (cara+cruz));
+	System.out.println("Total caras: " + cara);
+	System.out.println("Total cruces: " + cruz);
+	System.out.println((cara + cruz) / cruz * 100);
     }
 }

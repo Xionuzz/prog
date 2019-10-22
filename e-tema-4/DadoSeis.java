@@ -1,5 +1,6 @@
-/*
- *Ejercicio -4-2
+/*Lanza un dado de seis caras un millón de veces i calcula el porcentaje de veces
+ *que sale una puntuación.
+ *Ejercicio 14-4-2
  *@author: Rafa Carrió
  *@version: 1
 */
@@ -24,7 +25,7 @@ public class DadoSeis {
 	for(int i = 0; i <= 1000000; i++){
 	    dado = rnd.nextInt(1 - 6 + 1) + 1;
 
-	    switch (nota){
+	    switch (dado){
 	    case 1:
 		contadorUno++;
 		break;
@@ -50,9 +51,13 @@ public class DadoSeis {
 	    }
 	}
 
-	System.out.println(cara);
-	System.out.println(cruz);
-
-	System.out.println(cara / (cara + cruz) * cara);
+	// Muestra por pantalla los resultados
+	System.out.println("/// RESULTADOS ///");
+	System.out.println("Total unos: " + contadorUno);
+	System.out.println("Total doses: " + contadorUno);
+	System.out.println("Total treses: " + contadorTres);
+	System.out.println("Total cuatros: " + contadorCuatro);
+	System.out.println("Total cincos: " + contadorCinco);
+	System.out.println("Total seises: " + contadorSeis);
     }
 }
