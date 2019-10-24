@@ -9,7 +9,7 @@ public class Blackjack {
 		final int PUNTUACIONMAXIMA = 11;
 		final int PUNTUACIONMAXIMAPORRAS = 5;
 
-		boolean turnoOrdenador = true;
+		boolean turnoOrdenador = false;
 		boolean turnoJugador = true;
 		boolean plantarse = false;
 		boolean juego = true;
@@ -40,15 +40,18 @@ public class Blackjack {
 				System.out.println("HAS PERDIDO LA PARTIDA GANA EL ORDENADOR");
 				turnoJugador = false;
 				turnoOrdenador = false;
+				juego = false;
 			}
 
 			while(turnoJugador){
-
-				//resultadoJugador = 0;
-
-				System.out.println("// TURNO JUGADOR // \n \n 1)LANZAR DADO \n 2)PLANTARSE \n 3)VER PUNTAUCION ACTUAL");
+			    
+			        
+				System.out.println("1)LANZAR DADO");
+				System.out.println("2)PLANTARSE");
+				System.out.println("3)VER PUNTAUCION ACTUAL");
 
 				respuestaJugador = scan.nextInt();
+				scan.reset();
 
 				switch(respuestaJugador){
 					case 1:
@@ -57,13 +60,9 @@ public class Blackjack {
 					System.out.println("Has sacado un: " + puntuacionJugador);
 					break;
 					case 2:
-						if(puntuacionJugador == 0){
-							System.out.println("Tu puntuación actual es 0. No puedes plantarte con 0");
-						}
-						else {
-							System.out.println("Te has plantado con: " + puntuacionJugador);
-							plantarse = true;
-						}
+					System.out.println("Te has plantado con: " + resultadoJugador);
+					turnoJugador = false;
+					turnoOrdenador = true;
 					break;
 					case 3:
 					System.out.println("Tu puntuación es:"); 
@@ -75,29 +74,27 @@ public class Blackjack {
 					break;
 				}
 
-				
-
 				if(resultadoJugador == PUNTUACIONMAXIMA){
 					System.out.println("PUNTUACIÓN MÁXIMA \n \n ¡SUMAS 2 PORRAS!");
 					porrasJugador = porrasJugador + 2;
+					resultadoJugador = 0;
 
 				}
 
-				else if(porrasJugador >= 5){
+				if(porrasJugador >= 5){
 					System.out.println("HAS GANADO LA PARTIDA");
 					turnoJugador = false;
 					turnoOrdenador = false;
+					juego = false;
 
 				}
 
 				else if(resultadoJugador > PUNTUACIONMAXIMA) {
 					System.out.println("TE HAS PASADO \n \n ¡EL ORDENADOR SUMA 1 PORRA!");
 					porrasOrdenador = porrasOrdenador + 1;
+					resultadoJugador = 0;
 				}
 
-				else if(plantarse) {
-					turnoJugador = false;
-				}
 			}
 
 			while(turnoOrdenador){
@@ -107,28 +104,30 @@ public class Blackjack {
 				resultadoOrdenador = resultadoOrdenador + puntuacionOrdenador;
 
 
-				if(puntuacionOrdenador > 11){
-					System.out.println("EL ORDENADOR SE HA PASADO! \n OBTIENES UNA PORRA!");
+				if(resultadoOrdenador > 11){
+					System.out.println("EL ORDENADOR SE HA PASADO! OBTIENES UNA PORRA!");
 					porrasJugador = porrasJugador + 1;
 					turnoOrdenador = false;
 					turnoJugador = true;
 				}
-				else if(puntuacionOrdenador == 11){
-					System.out.println("EL ORDENADOR HA SACADO LA PUNTUACIÓN MÁXIMA! \n SUMA DOS PORRAS");
+				else if(resultadoOrdenador == 11){
+					System.out.println("EL ORDENADOR HA SACADO LA PUNTUACIÓN MÁXIMA! SUMA DOS PORRAS!");
 					porrasOrdenador = porrasOrdenador + 2;
 					turnoOrdenador = false;
 					turnoJugador = true;
 				}
 
-				else if(puntuacionOrdenador >= puntuacionJugador){
-					System.out.println("EL ORDENADOR HA IGUALADO O SUPERADO TU PUNTUACIÓN \n SUMA UNA PORRA!");
+				else if(resultadoOrdenador >= resultadoOrdenador){
+					System.out.println("EL ORDENADOR HA IGUALADO O SUPERADO TU PUNTUACIÓN SUMA UNA PORRA!");
 					porrasOrdenador = porrasOrdenador + 1;
 					turnoOrdenador = false;
 					turnoJugador = true;
+					resultadoJugador = 0;
 
 				}
 			}
-			resultadoJugador = 0;
+
+			resultadoOrdenador = 0;
 
 		} while(juego);
 		
