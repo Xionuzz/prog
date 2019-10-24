@@ -6,18 +6,16 @@ public class Blackjack {
 
 	public static void main(String Args[]) {
 		
+		/*Puntuaciones para el juego*/
+
 		final int PUNTUACIONMAXIMA = 11;
 		final int PUNTUACIONMAXIMAPORRAS = 5;
 
-		boolean turnoOrdenador = false;
+		boolean turnoOrdenador = false; 
 		boolean turnoJugador = true;
-		boolean plantarse = false;
-		boolean juego = true;
+		boolean cicloJuego = true; // Controla el juego
 
-		
-
-		int respuestaJugador = 0;
-
+		int respuestaJugador = 0; // Input del jugador para el switch
 		int puntuacionJugador = 0;
 		int porrasJugador = 0;
 		int resultadoJugador = 0;
@@ -26,32 +24,38 @@ public class Blackjack {
 		int porrasOrdenador = 0;
 		int resultadoOrdenador = 0;
 
-		
 
 		Random rnd = new Random();
 		Scanner scan = new Scanner(System.in);
 
 		System.out.println("--- BLACKJACK ---");
 
-		
+
+		// Bucle principal del juego, resetea el resultado del ordenador al inicio de cada pasada.
+
 		do {
 
-			if(porrasOrdenador >= 5){
+			// Comprueba las porras del ordenador y termina el juego si tiene 5 o más.
+
+			if(porrasOrdenador >= PUNTUACIONMAXIMAPORRAS){
 				System.out.println("HAS PERDIDO LA PARTIDA GANA EL ORDENADOR");
 				turnoJugador = false;
 				turnoOrdenador = false;
-				juego = false;
+				cicloJuego = false;
 			}
 
+			/*Bucle del jugador, lanza dados, muestra la puntuación actual o plantarse *
+			 *el bucle termina si se planta o gana la partida */
+
 			while(turnoJugador){
-			    
-			        
 				System.out.println("1)LANZAR DADO");
 				System.out.println("2)PLANTARSE");
 				System.out.println("3)VER PUNTAUCION ACTUAL");
 
 				respuestaJugador = scan.nextInt();
 				scan.reset();
+
+				// Comprueba las respuestas del jugador
 
 				switch(respuestaJugador){
 					case 1:
@@ -81,11 +85,14 @@ public class Blackjack {
 
 				}
 
-				if(porrasJugador >= 5){
+				/*Si el jugador gana la partida, termina el programa en esta condición,*
+				 *cerrando todos los bucles*/
+
+				if(porrasJugador >= PUNTUACIONMAXIMAPORRAS){
 					System.out.println("HAS GANADO LA PARTIDA");
 					turnoJugador = false;
 					turnoOrdenador = false;
-					juego = false;
+					cicloJuego = false;
 
 				}
 
@@ -97,40 +104,44 @@ public class Blackjack {
 
 			}
 
+			// Bucle del turno del ordenador, solo se activa en caso de que el jugador se plante.
+
 			while(turnoOrdenador){
 				System.out.println("ES EL TURNO DEL ORDENADOR");
-
+			
 				puntuacionOrdenador = rnd.nextInt(6 - 1 + 1) + 1;
 				resultadoOrdenador = resultadoOrdenador + puntuacionOrdenador;
+				System.out.println("ordenador -->" + resultadoOrdenador);
 
 
-				if(resultadoOrdenador > 11){
+				if(resultadoOrdenador > PUNTUACIONMAXIMA){
 					System.out.println("EL ORDENADOR SE HA PASADO! OBTIENES UNA PORRA!");
 					porrasJugador = porrasJugador + 1;
 					turnoOrdenador = false;
 					turnoJugador = true;
+					resultadoJugador = 0;
 				}
-				else if(resultadoOrdenador == 11){
+
+				else if(resultadoOrdenador == PUNTUACIONMAXIMA){
 					System.out.println("EL ORDENADOR HA SACADO LA PUNTUACIÓN MÁXIMA! SUMA DOS PORRAS!");
 					porrasOrdenador = porrasOrdenador + 2;
 					turnoOrdenador = false;
 					turnoJugador = true;
+					resultadoJugador = 0;
 				}
 
-				else if(resultadoOrdenador >= resultadoOrdenador){
+				else if(resultadoOrdenador >= resultadoJugador){
 					System.out.println("EL ORDENADOR HA IGUALADO O SUPERADO TU PUNTUACIÓN SUMA UNA PORRA!");
 					porrasOrdenador = porrasOrdenador + 1;
 					turnoOrdenador = false;
 					turnoJugador = true;
 					resultadoJugador = 0;
-
 				}
 			}
 
 			resultadoOrdenador = 0;
 
-		} while(juego);
-		
+		} while(cicloJuego);
 	}
 }
 
