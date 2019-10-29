@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class FormatoHora { 
+public class HoraFormato { 
 
     public static void main(String Args[]) {
 
@@ -31,6 +31,6 @@ public class FormatoHora {
 
         }while(segundos > 59);
 
-        System.out.printf("%02d:%02d:%02d",horas, minutos,segundos);
+        System.out.printf("HORA: %02d:%02d:%02d\n",horas, minutos,segundos);
     }
 }
