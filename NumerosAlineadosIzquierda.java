@@ -1,5 +1,5 @@
 
-public class NumerosAlineados { 
+public class NumerosAlineadosIzquierda { 
 
     public static void main(String Args[]) {
 
@@ -9,7 +9,7 @@ public class NumerosAlineados {
 		
 		for(int i = 1; i <= 9; i++){
 			s = s + i;
-			System.out.printf("%9s\n",s);
+			System.out.printf("%1s\n",s);
 		}
     }
 }
