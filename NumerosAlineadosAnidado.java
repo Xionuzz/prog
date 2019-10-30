@@ -9,14 +9,13 @@ public class NumerosAlineadosAnidado {
 		
 		for(int i = 1; i <= 9; i++){
             s = s + i;
-           
             System.out.printf("%9s",s);
+            a = "";
             
-            for(int c = 1; i <= 9; c++){
-                a = a + c
-                System.out.printf("%1s",a);
+            for(int c = s.length() - 1; c >= 0; c--){
+                a = a + s.charAt(c);
             }
-            
+            System.out.printf("%-9s\n",a); 
 		}
     }
 }
