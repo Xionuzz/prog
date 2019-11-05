@@ -5,7 +5,7 @@ public class EstacionMeteo {
 
         String nombreAplicacion = "** ESTACIÓN METEREOLÓGICA **";
         String nombreCiudad = "";
-	String tab = "";
+	    String tab = "";
         int dia = 0;
         int mes = 0;
         int año = 0;
@@ -15,8 +15,9 @@ public class EstacionMeteo {
         int velocidadViento = 0;
         int probLluvia = 0;
         int uvi = 0;
-	double temperatura = 0;
+	    double temperatura = 0;
         double presionAtmos = 0;
+        boolean validado;
 
         Scanner scan = new Scanner(System.in);
 
@@ -24,34 +25,46 @@ public class EstacionMeteo {
         System.out.println("Introduce los datos por favor");
 
         do {
-            System.out.println("Nombre ciudad:");
+            System.out.print("Nombre ciudad:");
             nombreCiudad = scan.nextLine();
-            scan.nextLine();
-        } while(nombreCiudad == "");
+            scan.reset();
+        } while(nombreCiudad.equals(""));
 
         do {
             System.out.print("Introduce día:");
             dia = scan.nextInt();
             scan.nextLine();
+        } while(dia == 0 || dia > 31);
+        
+        do {
             System.out.print("Introduce mes:");
             mes = scan.nextInt();
             scan.nextLine();
+        } while(mes == 0 || mes > 12);
+
+        do {
             System.out.print("Introduce año:");
             año = scan.nextInt();
             scan.nextLine();
-        } while(dia == 0 || mes == 0 || año == 0);
+        } while(año == 0);
 
         do {
             System.out.print("Introduce hora:");
             hora = scan.nextInt();
             scan.nextLine();
+        } while(hora == 0 || hora >= 24);
+
+        do {
             System.out.print("Introduce minuto:");
             minuto = scan.nextInt();
             scan.nextLine();
+        } while(minuto > 60);
+
+        do {
             System.out.print("Introduce segundo:");
             segundo = scan.nextInt();
             scan.nextLine();
-        } while(hora >= 24 || minuto >= 60 || segundo >= 60);
+        } while(segundo >= 60);
 
         do {
             System.out.print("Introduce la velocidad del viento:");
@@ -70,8 +83,8 @@ public class EstacionMeteo {
             System.out.print("Introduce presión atmosférica:");
             presionAtmos = scan.nextDouble();
             scan.nextLine();
-
-        } while(presionAtmos == 9999);
+            validado = presionAtmos > 0 && presionAtmos < 1200;
+        } while(!validado);
 
         do {
             System.out.print("Introduce la probabilidad de lluvia (0-100):");
@@ -88,68 +101,67 @@ public class EstacionMeteo {
         } while(uvi < 0);
 
         // Imprimir formateado en pantalla.
-
-        System.out.printf("\u001B[1;37;44m" + "%s\n",nombreAplicacion);
-        System.out.printf("Ciudad:" + "%10s%s\n",tab,nombreCiudad);
-        System.out.printf("Fecha:" + "%10s" + "%s%2d/%2d/%4d",tab, dia, mes, año);
-        System.out.printf("%10s" + "%02d:%02d:%02d",tab, hora, minuto, segundo);
+        String format = "%-40s%s%n";
+        System.out.printf("\u001B[1;37;44m" + "%s\n\n",nombreAplicacion);
+        System.out.printf("Ciudad:" + "%-16s%-1s\n",tab,nombreCiudad);
+        System.out.printf("Fecha:" + "%-17s%02d/%02d/%04d\n",tab, dia, mes, año);
+        System.out.printf("Hora de la mesura:" + "%-25s%02d:%02d:%02d\n",tab, hora, minuto, segundo);
 
 	/////////
 
 	if (velocidadViento < 30) {
-            System.out.printf("%10s" + "\u001B[1;32;40m" + "%2d",tab, velocidadViento);
-        }
-
-        else if (velocidadViento < 61){
-            System.out.printf("%10s" + "\u001B[1;33;40m" + "%2d",tab, velocidadViento);
-        }
-        else 
-	    System.out.printf("%10s" + "\u001B[1;31;40m" + "%2d",tab, velocidadViento);
+        System.out.printf("Velocidad del viento:" + "%10s" + "\u001B[1;32;40m" + "%-2dkmh\n",tab, velocidadViento);
+    }
+    else if (velocidadViento < 61){
+        System.out.printf("Velocidad del viento:" + "%10s" + "\u001B[1;33;40m" + "%-2d\n",tab, velocidadViento);
+    }
+    else 
+	    System.out.printf("Velocidad del viento:" + "%10s" + "\u001B[1;31;40m" + "%-2d\n",tab, velocidadViento);
 
 
 	///////////////////////////////
 	if (temperatura < 22) {
-	    System.out.printf("%10s" + "\u001B[1;32;40m" + "%2f",tab, temperatura);
+	    System.out.printf("Temperatura:" + "%10s" + "\u001B[1;32;40m" + "%-2f\n",tab, temperatura);
 	}
 	else if (temperatura <= 60) {
-	    System.out.printf("%10s" + "\u001B[1;33;40m" + "%2f",tab, temperatura);
+	    System.out.printf("Temperatura:" + "%10s" + "\u001B[1;33;40m" + "%-2f\n",tab, temperatura);
 	}
 	else if (temperatura > 60) {
-	    System.out.printf("%10s" + "\u001B[1;31;40m" + "%2f",tab, temperatura);
+	    System.out.printf("Temperatura:" + "%10s" + "\u001B[1;31;40m" + "%-2f\n",tab, temperatura);
 	}
 
 	/////////
-        System.out.printf("%10s" + "%10.1f",tab, presionAtmos);
+        System.out.printf("Presión atmosférica:" + "%10s" + "%-10.1f\n",tab, presionAtmos);
+
+        if (probLluvia < 35){
+            System.out.printf("Probabilidad de lluvia:" + "%10s" + "\u001B[1;32;40m" + "%2d\n",tab,probLluvia);
+        }
+        else if (probLluvia <= 70){
+            System.out.printf("Probabilidad de lluvia:" + "%10s" + "\u001B[1;33;40m" + "%2d\n",tab,probLluvia);
+        }
+        else
+            System.out.printf("Probabilidad de lluvia:" + "%10s" + "\u001B[1;31;40m" + "%2d\n",tab,probLluvia);
         
-        switch(probLluvia){
-            case 0:
-            case 35:
-                System.out.printf("%10d" + "\u001B[1;32;40m" + "%2d",probLluvia);
-                break;
-            case 70: 
-                System.out.printf("%10d" + "\u001B[1;33;40m" + "%2d",probLluvia);
-                break;
-            case 100:
-                System.out.printf("%10d" + "\u001B[1;31;40m" + "%2d",probLluvia);
-                break;
+        /////////////////
+
+        if (uvi <= 2){
+            System.out.printf("UVI:" + "%10s" + "\u001B[1;32;40m" + "%2d\n",tab,uvi);
         }
-	/*
-        switch(uvi){
-            case 2:
-            case 5:
-                System.out.printf("%10s" + "\u001B[1;32;40m" + "2d%",tab, uvi);
-                break;
-            case 7: 
-                System.out.printf("%10s" + "\u001B[1;34;40m" + "2d%",tab, uvi);
-                break;
-            case 10:
-                System.out.printf("%10s" + "\u001B[1;33;40m" + "2d%",tab, uvi);
-                break;
-            case 11:
-                System.out.printf("%10s" + "\u001B[1;31;40m" + "2d%",tab, uvi);
-                break;
+        else if (uvi <= 5){
+            System.out.printf("UVI:" + "%10s" + "\u001B[1;32;40m" + "%2d\n",tab,uvi);
         }
-	*/
+        else if (uvi <= 7) {
+            System.out.printf("UVI:" + "%10s" + "\u001B[1;33;40m" + "%2d\n",tab,uvi);
+        }
+        else if (uvi <= 10){
+            System.out.printf("UVI:" + "%10s" + "\u001B[1;33;40m" + "%2d\n",tab,uvi);
+        }
+        else 
+            System.out.printf("UVI:" + "%10s" + "\u001B[1;33;40m" + "%2d\n",tab,uvi);
+        
+              
+        
+	
     
     }
 
