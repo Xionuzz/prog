@@ -42,11 +42,15 @@ public class GreatNumber {
 
     /*Returns the greatest of two given numbers*/
 
-    public static int compare(int firstNumber, int secondNumber){
+	public static int compare(int firstNumber, int secondNumber)
+	{
 
-        if (firstNumber >= secondNumber){
+		if (firstNumber >= secondNumber)
+		{
             return firstNumber;
-        } else {
+		} 
+		else 
+		{
             return secondNumber;
         }
     }

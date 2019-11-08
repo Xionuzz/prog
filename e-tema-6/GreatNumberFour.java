@@ -10,11 +10,11 @@ public class GreatNumberFour {
 
 	int firstNumber = 0;
 	int secondNumber = 0;
-        int thirdNumber = 0;
-        int fourthNumber = 0;
-	int greatNumber = 0;
-        int max = 0;
-        int min = 0;
+    int thirdNumber = 0;
+    int fourthNumber = 0;
+    int greatNumber = 0;
+    int max1 = 0;
+    int max2 = 0;
 	boolean comparing = true; /* Controls the loop */
 	String userInput = "";
 
@@ -32,15 +32,17 @@ public class GreatNumberFour {
 	    secondNumber = scan.nextInt();
 	    scan.nextLine();
 
-            System.out.print("Enter the third number: ");
+        System.out.print("Enter the third number: ");
 	    thirdNumber = scan.nextInt();
 	    scan.nextLine();
 
-            System.out.print("Enter the fourth number: ");
+        System.out.print("Enter the fourth number: ");
 	    fourthNumber = scan.nextInt();
 	    scan.nextLine();
 
-            greatNumber = compare(firstNumber, secondNumber, thirdNumber, fourthNumber, max, min);
+        max1 = compare(firstNumber, secondNumber);
+        max2 = compare(thirdNumber, fourthNumber);
+        greatNumber = compare(max1, max2);
 
 	    System.out.println("The great number is: " + greatNumber);
 
@@ -50,30 +52,25 @@ public class GreatNumberFour {
 	    if (userInput.equalsIgnoreCase("y"))
 		comparing = false;
 	}
-    }
+}
 
+    /**
+     * 
+     * @param first
+     * @param second
+     * @return
+     */
 
-    /*Returns the greatest of two given numbers*/
+    public static int compare(int first, int second)
+	{
 
-    public static int compare(int first, int second, int third, int fourth, int max, int min){
-
-        if (first >= second) {
-            first = max;
-        } else {
-            second = max;
+		if (first >= second)
+		{
+            return first;
+		} 
+		else 
+		{
+            return second;
         }
-
-        if (third >= fourth) {
-            third = min;
-        } else {
-            fourth = min;
-        }
-
-        if (max >= min) {
-            return max;
-        } else {
-            return min;
-        }
-
     }
 }
