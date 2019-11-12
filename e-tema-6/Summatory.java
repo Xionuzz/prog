@@ -1,10 +1,10 @@
 /* Ejercicio 9
  * Rafael Carrio
- *  */
+ * Outputs the result of a integer summatory */
 
 import java.util.Scanner;
 
-public class Sumatory {
+public class Summatory {
 
     public static void main(String Args[]) {
 
@@ -12,7 +12,7 @@ public class Sumatory {
 
         Scanner scan = new Scanner(System.in);
 
-        System.out.print("Introduce a number(interger): ");
+        System.out.print("Introduce a number(integer): ");
         number = scan.nextInt();
         scan.nextLine();
         System.out.println(sumatory(number));
@@ -20,9 +20,9 @@ public class Sumatory {
 
     
     /**
-     * Outputs to screen character a numberTimes
+     * Does the summatory of an integer number
      * @param number an integer variable
-     * @return The summatory of the input integer
+     * @return The result of the summatory
      */
 
 
