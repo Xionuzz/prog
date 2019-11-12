@@ -1,6 +1,6 @@
 /* Ejercicio 7
  * Rafael Carrio
- * Returns true if 4 inputed integer numbers are a palindrome*/
+ * Returns true if 4 inputed interger numbers are a palindrome*/
 
 import java.util.Scanner;
 
@@ -17,54 +17,54 @@ public class PalindromicNumber {
         
         Scanner scan = new Scanner(System.in);
 
-        System.out.print("Introduce the first number(integer): ");
+        System.out.print("Introduce the first number(interger): ");
         firstNumber = scan.nextInt();
         scan.nextLine();
-        System.out.print("Introduce the second number(integer): ");
-        secondNumber = scan.nextInt();
+        System.out.print("Introduce the second number(interger): ");
+        firstNumber = scan.nextInt();
         scan.nextLine();
-        System.out.print("Introduce the third number(integer): ");
-        thirdNumber = scan.nextInt();
+        System.out.print("Introduce the third number(interger): ");
+        firstNumber = scan.nextInt();
         scan.nextLine();
-        System.out.print("Introduce the fourth number(integer): ");
-        fourthNumber = scan.nextInt();
+        System.out.print("Introduce the fourth number(interger): ");
+        firstNumber = scan.nextInt();
         scan.nextLine();
 
         palindromic = palindrome(firstNumber, secondNumber, thirdNumber, fourthNumber);
 
-        if (palindromic){
+        if (palindromic == true){
             System.out.println("The numbers are palindromic");
-        }else{
+        } else {
             System.out.println("The numbers aren't palindromic");
         }
-
     }
 
     
     /**
      * Evaluates if four given interger numbers ara palindromic
-     * @param Four integer variables
-     * @return returns true if the numbers are palindromic
+     * @param 
+     * @return boolean
      */
 
 
     public static boolean palindrome(int first, int second, int third, int fourth){
+
+        boolean firstAndSecond = false;
+        boolean thirdAndFourth = false;
         
-        boolean firstFourth = false;
-        boolean secondThird = false;
-        
-        if (first == fourth){
-            firstSecond = true;
+        if (first == second){
+            firstAndSecond = true;
         }
-        
-        if(second == third){
-            fourthThird = true;
+
+        if (third == fourth) {
+            thirdAndFourth = true;
         }
-        
-        if (firstFourth == true && secondThird == true){
+
+        if (firstAndSecond && thirdAndFourth == true) {
             return true;
-        }else{
+        } else{
             return false;
         }
+
     }
 }   

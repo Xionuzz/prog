@@ -14,7 +14,7 @@ public class Factorial {
         
         Scanner scan = new Scanner(System.in);
 
-        System.out.print("Introduce the number to n!(interger): ");
+        System.out.print("Enter the number to n!(integer): ");
         factorialNumber = scan.nextInt();
         scan.nextLine();
         System.out.println("The n! of " + factorialNumber + " is: " + factorial(factorialNumber));
@@ -22,8 +22,8 @@ public class Factorial {
 
     
     /**
-     * Calculates the factorial of a interger number
-     * @param factorial
+     * Calculates the factorial of a integer number
+     * @param factorialNumber
      * @return int
      */
 
