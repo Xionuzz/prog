@@ -1,5 +1,5 @@
 /**
- * 
+ * Ejercicio 11
  * @author Rafael Carrio
  * Imprime por pantalla una Quimiela de futbol aleatoria
  */
@@ -18,9 +18,9 @@ public class Quimiela {
 
 
     /**
-     * 
+     * Genera y devuelve un número aleatorio con el método random
      * @param randomNumber
-     * @return
+     * @return Numero aleatorio entre el 1 y el 3
      */
     public static int randomNumber(int randomNumber){
         
@@ -32,15 +32,15 @@ public class Quimiela {
 
 
     /**
-     * 
-     * @param partidos
-     * @return 
+     * Imprime formateado por pantalla una quimiela aleatoria.
+     * @param partidos numero de partidos que juegan la quimiela.
+     * @return void
      */
 
 
     public static void printQuimiela(int partidos){
        
-        int numeroAle = 5;
+        int numeroAle = 0;
         String tab = "Partido";
         String empate = "X";
 
