@@ -19,6 +19,8 @@ import java.util.Scanner;
         System.out.print("Introduce tu nombre: ");
         nombre = scan.nextLine();
 
+        /* Valida la instrduccion del codigo de idioma */ 
+        
         do{
             System.out.print("Introduce el idioma (1-ENG 2-ESP 3-CAT)");
             codigo = scan.nextInt();
@@ -31,21 +33,27 @@ import java.util.Scanner;
        saludoPersonalizado(nombre, codigo);
     }
 
-    public void saludoPersonalizado(String test, int codigo){
+
+    /**
+     * Imprime por pantalla un saludo en idioma personalizado segun codigo proporcionado.
+     * @param nombre
+     * @param codigo
+     * @return void
+     */
+
+
+    public static void saludoPersonalizado(String nombre, int codigo){
 
         switch(codigo){
             case 1:
-                System.out.println();
+                System.out.println("Hello " + nombre + " I hope you have a nice day.");
                 break;
             case 2:
-                System.out.println();
+                System.out.println("Hola " + nombre + " espero que tengas un buen día.");
                 break;
             case 3:
-                System.out.println();
+                System.out.println("Hola " + nombre + " espere que tingues un bon día.");
                 break;
         }
-
-
     }
-
 }
