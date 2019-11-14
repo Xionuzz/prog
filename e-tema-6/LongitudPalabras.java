@@ -9,8 +9,11 @@ import java.util.Scanner;
 
  public class LongitudPalabras {
 
+    public enum Vocales {a,e,i,o,u,A,E,I,O,U,Á,É,Í,Ó,Ú,á,é,í,ó,ú}
+
     public static void main(String Args[]){
 
+        
         menu();
 
     }
@@ -62,21 +65,17 @@ import java.util.Scanner;
         segundaPalabra = scan.nextLine();
         System.out.println("Introduce la tercera palabra");
         terceraPalabra = scan.nextLine();
-
-        if (primeraPalabra.lenght() > segundaPalabra.lenght()) {
-            
-            if(s.lenght(primeraPalabra) > s.lenght(terceraPalabra)){
-                return primeraPalabra;
-            }else{
-                return terceraPalabra;
-            } 
-        
-        }else if (s.lenght(segundaPalabra) > s.lenght(terceraPalabra)){
+        /*
+        if (primeraPalabra.lenght() > segundaPalabra.lenght() && primeraPalabra.length() > 
+        terceraPalabra.length()) {
+            return primeraPalabra;
+        }else if (segundaPalabra.length() > primeraPalabra.length() && segundaPalabra.length() >
+        terceraPalabra.length()){
             return segundaPalabra;
-
-        }else{
+            */
+       // }else{
             return terceraPalabra;
-        }
+        //}
         
         
     }
@@ -90,14 +89,21 @@ import java.util.Scanner;
         Scanner scan = new Scanner(System.in);
 
         String palabra = "";
+        String letras = "";
         int contadorVocales = 0;
+
+       
+
+        
         
         System.out.print("Introduce una palabra: ");
         palabra = scan.nextLine();
 
-        for (int i = 0; i > palabra.length(); i++){
+        for (int i = 0; i < palabra.length(); i++){
 
-            if (palabra.charAt(i) == "a" || "e" || "i" || "o" || "u"){
+            System.out.println(palabra.charAt(i));
+
+            if (palabra.contains("a")){
                 contadorVocales++;
             }
         }

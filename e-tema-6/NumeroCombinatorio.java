@@ -31,13 +31,16 @@ import java.util.Scanner;
 
     }
 
+    /**
+     * 
+     * @param m
+     * @param n
+     * @return Un número combinatorio
+     */
 
     public static int calculacombinatoria(int m, int n){
         
         return factorial(m) / (factorial(n) * factorial(m-n));
-        
-        //factorial(m) / factorial(n) * (factorial(m - n));
-
     }
 
 
