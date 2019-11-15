@@ -7,17 +7,22 @@
 
 import java.util.Scanner;
 
+
  public class LongitudPalabras {
 
-    public enum Vocales {a,e,i,o,u,A,E,I,O,U,Á,É,Í,Ó,Ú,á,é,í,ó,ú}
+    
 
     public static void main(String Args[]){
-
         
+
         menu();
 
     }
 
+
+    /**
+     * 
+     */
     public static void menu(){
 
         boolean ejecutando = true;
@@ -40,6 +45,7 @@ import java.util.Scanner;
                 System.out.println("La palabra más larga es: " + palabraLarga());
 
             }else if (userInput == 2){
+                System.out.println("La palabra más corta es: " + palabraCorta());
 
             }else if (userInput == 3){
                 System.out.println(numeroVocales());
@@ -58,26 +64,66 @@ import java.util.Scanner;
         String primeraPalabra = "";
         String segundaPalabra = "";
         String terceraPalabra = "";
+        int longFirstWord = 0;
+        int longSecondWord = 0;
+        int longThirdWord = 0;
 
-        System.out.println("Introduce la primera palabra");
+        System.out.print("Introduce la primera palabra");
         primeraPalabra = scan.nextLine();
-        System.out.println("Introduce la segunda palabra");
+        System.out.print("Introduce la segunda palabra");
         segundaPalabra = scan.nextLine();
-        System.out.println("Introduce la tercera palabra");
+        System.out.print("Introduce la tercera palabra");
         terceraPalabra = scan.nextLine();
-        /*
-        if (primeraPalabra.lenght() > segundaPalabra.lenght() && primeraPalabra.length() > 
-        terceraPalabra.length()) {
+
+        longFirstWord = primeraPalabra.length();
+        longSecondWord = segundaPalabra.length();
+        longThirdWord = terceraPalabra.length();
+
+        if (longFirstWord > longSecondWord && longFirstWord > longThirdWord){
             return primeraPalabra;
-        }else if (segundaPalabra.length() > primeraPalabra.length() && segundaPalabra.length() >
-        terceraPalabra.length()){
+        } else if(longSecondWord > longFirstWord && longSecondWord > longThirdWord){
             return segundaPalabra;
-            */
-       // }else{
+        }else{
             return terceraPalabra;
-        //}
-        
-        
+        }
+    }
+
+
+    /**
+     * 
+     * @return
+     */
+
+
+    public static String palabraCorta(){
+
+        Scanner scan = new Scanner(System.in);
+
+        String primeraPalabra = "";
+        String segundaPalabra = "";
+        String terceraPalabra = "";
+        int longFirstWord = 0;
+        int longSecondWord = 0;
+        int longThirdWord = 0;
+
+        System.out.print("Introduce la primera palabra");
+        primeraPalabra = scan.nextLine();
+        System.out.print("Introduce la segunda palabra");
+        segundaPalabra = scan.nextLine();
+        System.out.print("Introduce la tercera palabra");
+        terceraPalabra = scan.nextLine();
+
+        longFirstWord = primeraPalabra.length();
+        longSecondWord = segundaPalabra.length();
+        longThirdWord = terceraPalabra.length();
+
+        if (longFirstWord < longSecondWord && longFirstWord < longThirdWord){
+            return primeraPalabra;
+        } else if(longSecondWord < longFirstWord && longSecondWord < longThirdWord){
+            return segundaPalabra;
+        }else{
+            return terceraPalabra;
+        }
     }
 
     //public static String palabraCorta(){
@@ -89,23 +135,31 @@ import java.util.Scanner;
         Scanner scan = new Scanner(System.in);
 
         String palabra = "";
-        String letras = "";
         int contadorVocales = 0;
-
        
-
-        
-        
         System.out.print("Introduce una palabra: ");
         palabra = scan.nextLine();
+        palabra = palabra.toLowerCase();
 
         for (int i = 0; i < palabra.length(); i++){
-
-            System.out.println(palabra.charAt(i));
-
-            if (palabra.contains("a")){
-                contadorVocales++;
+            
+            switch(palabra.charAt(i)){
+                case 'a':
+                case 'e':
+                case 'i': 
+                case 'o': 
+                case 'u':
+                case 'á': 
+                case 'é':   
+                case 'í':    
+                case 'ó': 
+                case 'ú':
+                   contadorVocales++;
+                   break;
             }
+
+            
+    
         }
 
         return contadorVocales;
