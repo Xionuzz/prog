@@ -56,7 +56,7 @@ public class SecuenciaCeros {
                             System.out.print(l);
                         }
 
-                        System.out.println("");
+                        System.out.println(""); // Salto de línea
                     }
                 }
             }       

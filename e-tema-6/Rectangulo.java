@@ -1,7 +1,7 @@
 /**
  * Ejercicio 17
  * @author Rafael Carrió
- * 
+ * Imprime por pantalla un rectángulo compuesto por un símbolo
  */
 
 
@@ -32,8 +32,25 @@ public class Rectangulo {
         
     }
 
+
+    /**
+     * Imprime por pantalla un réctangulo formado por un caracter
+     * @param anchura La altura del rectángulo
+     * @param longitud La anchura
+     * @param simbolo El caracter que forma el rectángulo
+     * @return void
+     */
     public static void imprimirRectangulo(int anchura, int longitud, String simbolo){
 
-        for(int i = 0; ){}
+        /* Controla la altura del rectangulo*/ 
+        for(int i = 0; i < anchura; i++){
+            for(int j = 0; j < longitud; j++){
+                System.out.print(simbolo);
+            }
+
+            System.out.println(""); // Salto de línea
+        }
 
     }
+
+}
