@@ -1,54 +1,51 @@
 /**
- * Ejercicio 18
+ * Ejercicio 19
  * @author Rafael Carrió
- * Calcula la letra correspondiente a un DNI
+ * Comprueba si un NIF introducido es correcto.
  */
 
 import java.util.Scanner;
 
 
-public class DNImodulo23 {
+public class VerificarNIF {
 
     public static void main(String Args[]){
         
-        String NIF = "";
-        String DNI = obtenerDNI();
-
-        NIF = DNI + calcularNIF(DNI);
-
-        System.out.println("El NIF es: " + NIF);
+        String NIF = obtenerNIF();
+        verificarNIF(NIF);
+       
     }
 
 
     /**
-     * Obtiene el DNI sin la letra
+     * Obtiene el NIF
      * 
      * @return
      */
 
 
-    public static String obtenerDNI(){
+    public static String obtenerNIF(){
         
         Scanner scan = new Scanner(System.in);
         
-        String dni = "";
+        String NIF = "";
         
-        System.out.print("Introduce tu DNI(Sin la letra): ");
-        dni = scan.nextLine();
+        System.out.print("Introduce tu NIF (DNI con letra): ");
+        NIF = scan.nextLine();
         
-        return dni;
+        return NIF;
 
     }
-    
+
 
     /**
-     * Calcula la letra del DNI
+     * 
      * @param DNI
-     * @return NIF 
+     * @return
      */
 
 
-    public static String calcularNIF(String DNI){
+    public static String verificarNIF(String NIF){
         
         String letrasDNI = "TRWAGMYFPDXBNJZSQVHLCKE";
         String errorMessage = "El DNI introducido no es correcto";
@@ -73,3 +70,4 @@ public class DNImodulo23 {
         }
     }
 }
+
