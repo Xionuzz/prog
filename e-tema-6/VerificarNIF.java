@@ -48,26 +48,28 @@ public class VerificarNIF {
     public static String verificarNIF(String NIF){
         
         String letrasDNI = "TRWAGMYFPDXBNJZSQVHLCKE";
-        String errorMessage = "El DNI introducido no es correcto";
+        String DNI = "";
+        //String errorMessage = "El DNI introducido no es correcto";
         int numeroDNI = 0;
         int restoDNI = 0;
-        char letraDNI = 'e';
-
+        char letraDNI = NIF.charAt(8);
+        
+        
+        for(int i = 0; i < NIF.length() - 1; i++){
+            
+            if(Character.isDigit(i))
+        }
 
         numeroDNI = Integer.parseInt(DNI);
         restoDNI = numeroDNI % 23;
 
-        for(int i = 0; i < letrasDNI.length();i++){
-            if(restoDNI == i){
+        //for(int j = 0; i < letrasDNI.length();j++){
+            if(restoDNI == j){
                 letraDNI = letrasDNI.charAt(i);
             }
-        }
+        //}
 
-        if(letraDNI == 'e'){
-            return errorMessage;
-        } else{
-            return String.valueOf(letraDNI);
-        }
+        return "hola";
     }
 }
 

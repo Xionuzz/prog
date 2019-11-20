@@ -40,6 +40,8 @@ public class Rectangulo {
      * @param simbolo El caracter que forma el rectángulo
      * @return void
      */
+
+     
     public static void imprimirRectangulo(int anchura, int longitud, String simbolo){
 
         /* Controla la altura del rectangulo*/ 
